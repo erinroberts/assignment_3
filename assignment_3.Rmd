@@ -31,6 +31,19 @@ ggplot(data=gapminder, aes(x=year, y=lifeExp, color=continent))+
   geom_point()+geom_smooth(method=lm)
 ```
 
-Figure 2. Shows life expectancy for 1952-2007, but this time the data is color-coded by continent. Additionally, a trendline allows us to see that life expectancy has increased in all continents over time. 
+Figure 2. Shows life expectancy for 1952-2007, but this time the data is color-coded by continent. Additionally, a trendline allows us to see that life expectancy has increased in all continents over time.
+
+```{r Life exp with pop growth by country, echo=FALSE, figure.width=5.5,fig.height=3}
+ggplot(data=gapminder,aes(x=pop, y=lifeExp, by=country, color=continent)) + geom_line() + geom_point()
+
+```
+
+Figure 3. This graph depicts how population growth for each country affects life expectancy.
+
+```{r population per year per country, echo=FALSE, figure.width=6.5,fig.height=4}
+ggplot(data=gapminder, aes(x=year, y=pop, by=country, color=continent)) + geom_line() + geom_point()
+```
+
+Figure 4. This graph illustrates how population size for each listed country has changed every year.
 
 
