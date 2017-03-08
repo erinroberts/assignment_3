@@ -1,7 +1,9 @@
 ---
 title: "Readme.md"
-output: pdf_document
-authors: Erin Roberts, Melissa, Maisaa Albkerat
+authors: "Erin Roberts, Melissa Hoffman, Maisaa Albkerat"
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -10,25 +12,25 @@ library(ggplot2)
 library(plyr)
 gapminder_location<-curl(url = "https://raw.githubusercontent.com/resbaz/r-novice-gapminder-files/master/data/gapminder-FiveYearData.csv")
 gapminder<-read.csv(gapminder_location)
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE, fig.width = 5, fig.height = 5, warning = FALSE, message = FALSE)
 ```
 
-## R Markdown
+## Gapminder Data Exploration
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
-
-```{r cars}
-summary(cars)
+```{R Life exp, echo=FALSE,fig.width=5.5,fig.height=3}
+ggplot(data=gapminder, aes(x=year, y=lifeExp))+
+  geom_point()
 ```
 
-## Including Plots
+Figure 1. Shows life expectancy from 1952-2007 for all continents. It is difficult to see any trends in this figure. 
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+``````{R Life exp for cont, echo=FALSE,fig.width=6.5,fig.height=3}
+ggplot(data=gapminder, aes(x=year, y=lifeExp, color=continent))+
+  geom_point()+geom_smooth(method=lm)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Figure 2. Shows life expectancy for 1952-2007, but this time the data is color-coded by continent. Additionally, a trendline allows us to see that life expectancy has increased in all continents over time. 
+
+
