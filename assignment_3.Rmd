@@ -53,5 +53,52 @@ Figure 4. This graph illustrates how population size for each listed country has
   For the continents analyzed in the gapminder data, there is a positive trend in life expectancy over time between 1952 and 2007 for each continent analyzed. This is best illustrated with the use of trend lines. Life expectancy and population growth appear to have a very high positive corrlecation for the continents studied. Asia has the highest population levels of any country studied. The graph of population versus year also shows a positive correlation in between 1952 and 2007, though Africa appears to be more stagnant.
 
   
+```{rcpp}
+{r gdpPercap_year, echo=FALSE, include=FALSE}
+reg <- lm(gdpPercap ~ year, data=gapminder)
+reg
+summary(reg)
+```
+
+##**Relationship between gdpPercap and year**
+There is no correlation between GdpPercap and year
+ R-squared= 0.05, p-value: < 2.2e-16
+
+```{r scatterplot, fig.width=8, fig.height=6, echo=FALSE}
+ggplot(data = gapminder, aes(x = year, y = gdpPercap)) +
+  geom_point() +  scale_y_log10() + geom_smooth(method="lm")
+
+```
 
 
+
+
+
+
+
+
+
+
+
+
+figure5. relationship between GdpPercap and year
+```{r  fig.width=6, fig.height=4, echo=FALSE}
+ggplot(data = gapminder, aes(x=year, y=gdpPercap, color=continent)) +
+   geom_point()+  scale_y_log10()+ geom_smooth(method="lm")
+
+```
+
+
+
+
+
+
+
+figure 6. relationship between GdpPercap and year by continent
+
+```{r fig.width=6, fig.height=4, echo=FALSE}
+ggplot(data = gapminder, aes(x=continent, y=gdpPercap, color=continent)) +
+   geom_point()+  scale_y_log10()
+```
+
+Figure 7. GdpPerCap VS Cintinent
