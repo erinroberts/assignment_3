@@ -66,7 +66,8 @@ summary(reg)
 
 ##**Relationship between gdpPercap and year**
 There is significant positive correlation between gdpperCap and year, it is increasing by years but different by countries and continents.
- R-squared= , p-value = 
+R-squared= `r summary(reg)$r.squared` 
+
 
 ```{r scatterplot, fig.width=6, fig.height=4, echo=FALSE}
 ggplot(data = gapminder, aes(x = year, y = gdpPercap)) +
