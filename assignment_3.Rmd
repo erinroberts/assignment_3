@@ -33,10 +33,14 @@ ggplot(data=gapminder, aes(x=year, y=lifeExp, color=continent))+
 
 Figure 2. Shows life expectancy for 1952-2007, but this time the data is color-coded by continent. Additionally, a trendline allows us to see that life expectancy has increased in all continents over time.
 
+
+
 ```{r Life exp with pop growth by country, echo=FALSE, figure.width=8,fig.height=3}
 ggplot(data=gapminder,aes(x=pop, y=lifeExp, by=country, color=continent)) + geom_line() + geom_point()
 
 ```
+
+
 
 ## Life Expectancy and Population
 
@@ -48,13 +52,13 @@ ggplot(data=gapminder, aes(x=year, y=pop, by=country, color=continent)) + geom_l
 
 Figure 4. This graph illustrates how population size for each listed country has changed every year.
 
-## Analysis of Trends
+
 
   For the continents analyzed in the gapminder data, there is a positive trend in life expectancy over time between 1952 and 2007 for each continent analyzed. This is best illustrated with the use of trend lines. Life expectancy and population growth appear to have a very high positive corrlecation for the continents studied. Asia has the highest population levels of any country studied. The graph of population versus year also shows a positive correlation in between 1952 and 2007, though Africa appears to be more stagnant.
 
   
-```{rcpp}
-{r gdpPercap_year, echo=FALSE, include=FALSE}
+
+```{r gdpPercap_year, echo=FALSE, include=FALSE}
 reg <- lm(gdpPercap ~ year, data=gapminder)
 reg
 summary(reg)
@@ -62,13 +66,14 @@ summary(reg)
 
 ##**Relationship between gdpPercap and year**
 There is significant positive correlation between gdpperCap and year, it is increasing by years but different by countries and continents.
- R-squared= 0.05, p-value: < 2.2e-16
+ R-squared= , p-value = 
 
 ```{r scatterplot, fig.width=6, fig.height=4, echo=FALSE}
 ggplot(data = gapminder, aes(x = year, y = gdpPercap)) +
   geom_point() +  scale_y_log10() + geom_smooth(method="lm")
 
 ```
+
 figure5. relationship between GdpPercap and year
 
 
