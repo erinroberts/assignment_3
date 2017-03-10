@@ -54,16 +54,14 @@ ggplot(data=gapminder,aes(x=pop, y=lifeExp, by=country, color=continent)) + geom
 
 ```
 
-Figure 3. This graph depicts how population growth for each country affects life expectancy.
+Figure 3. This graph depicts how population growth for each country affects life expectancy. There is a strongly positive correlation between population growth and life expectancy at low population levels. The slope levels off as the population grows however. Asia has larger population levels and still shows an overall positive relationship between population growth and life expectancy for population sizes above 5 x 10^8.
 \vspace{20pt}
 
 ```{r population per year per country, echo=FALSE, figure.width=6.7,fig.height=3}
 ggplot(data=gapminder, aes(x=year, y=pop, by=country, color=continent)) + geom_line() + geom_point()
 ```
 
-Figure 4. This graph illustrates how population size for each listed country has changed every year.
-
-  For the continents analyzed in the gapminder data, there is a positive trend in life expectancy over time between 1952 and 2007 for each continent analyzed. This is best illustrated with the use of trend lines. Life expectancy and population growth appear to have a very high positive corrlecation for the continents studied. Asia has the highest population levels of any country studied. The graph of population versus year also shows a positive correlation in between 1952 and 2007, though Africa appears to be more stagnant.
+Figure 4.This graph illustrates how population size for each listed country has changed every year. For the continents analyzed in the gapminder data, there is a positive trend in life expectancy over time between 1952 and 2007 for each continent analyzed. This is best illustrated with the use of trend lines. Life expectancy and population growth appear to have a very high positive corrlecation for the continents studied. Asia has the highest population levels of any country studied. The graph of population versus year also shows a positive correlation in between 1952 and 2007, though Africa appears to be more stagnant.
 
   
 
