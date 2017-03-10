@@ -82,6 +82,7 @@ ggplot(data = gapminder, aes(x = year, y = gdpPercap)) +
 
 Figure 5. There is significant positive correlation between gdpperCap and year, it is increasing by years but different by countries and continents.
 R-squared= `r summary(reg)$r.squared`. 
+p-value: < 2.2e-16.
 \vspace{20pt}
 
 
